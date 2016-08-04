@@ -108,3 +108,24 @@ console.log(m.a());
 
 var a = "😸";
 console.log("马" + "是" + a);
+console.log(a+a);
+//es6 入门
+
+//代码块的引入,不存在变量提升
+{
+    var a=10;
+    var b=11;
+console.log(a);
+}
+
+
+
+if (true) {
+ let tmeo="343";
+ // tmp = 'abc'; // ReferenceError
+ 
+}
+
+
+
+

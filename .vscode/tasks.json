@@ -5,5 +5,5 @@
     "command": "node",
     "isShellCommand": true,
     "showOutput": "always",
-    "args": ["typejs.js"]
+    "args": ["Test.js"]
 }
