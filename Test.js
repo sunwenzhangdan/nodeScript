@@ -118,13 +118,25 @@ console.log(a+a);
 console.log(a);
 }
 
+//什么是字符编码
+
 
 
 if (true) {
  let tmeo="343";
  // tmp = 'abc'; // ReferenceError
- 
+ console.log(tmeo)
 }
+
+//字符串
+for (let codePoint of 'foo') {
+  console.log(codePoint)
+}
+//正则表达式
+
+    var regex = new RegExp('xyz');
+    console.log("xyz".match(regex));
+
 
 
 
