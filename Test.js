@@ -71,7 +71,7 @@ function test() {
     }
 }
 //上面的代码跟下面的代码一样
-//                                                       
+//
 
 function test() {
     var foo;
@@ -86,10 +86,9 @@ function test() {
     foo1();
 }
 
-//javascript 中undefined 与  
+//javascript 中undefined 与
 
 //JavaScript的几个重点知识     this   apply   闭包    参数返回值为函数
-
 console.log(this + "+++++++++")
 console.log(this === global)
 
@@ -108,24 +107,60 @@ console.log(m.a());
 
 var a = "😸";
 console.log("马" + "是" + a);
-console.log(a+a);
+console.log(a + a);
 //es6 入门
 
 //代码块的引入,不存在变量提升
 {
-    var a=10;
-    var b=11;
-console.log(a);
+    var a = 10;
+    var b = 11;
+    console.log(a);
 }
 
-
-
+//暂缓性死区
 if (true) {
- let tmeo="343";
- // tmp = 'abc'; // ReferenceError
- 
+    let tmr = "343";
+    // tmp = 'abc'; // ReferenceError
+
 }
 
+function bar(x = 2, y = x) {
+    return [x, y];
+}
 
+console.log(bar());
+//不允许重复声明
+let n = 10;
+//第一种场景，内层变量可能会覆盖外层变量。
+//用来计数的循环变量泄露为全局变量
+{
+    {
+        {
+            let insane = 'Hello World'
+             {
 
+                console.log(insane);
+            }
+        }
+    }
+};
+//内层作用域可以访问外层作用欲的变量
+//总是将代码包裹成一个 IIFE(Immediately-Invoked Function Expression)，用以创建独立隔绝的定义域。这一举措可防止全局命名空间被污染。
+//ES5规定，函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明。
+function f() { console.log('I am outside!'); }
+f();
+(function() {
+    //  if (true) {
+    //      // 重复声明一次函数f
+    //     function f() { console.log('I am inside!'); }
+    //  }
+    console.log(f)
 
+    f();
+}());
+//执行原理
+let [k, g, h] = [1, 2, 3];
+let [t, y] = [1, 2, 3];
+console.log(t);
+console.log(y);
+//析够如果等号的右边不是数组（或者严格地说，不是可遍历的结构，参见《Iterator》一章），那么将会报错。
