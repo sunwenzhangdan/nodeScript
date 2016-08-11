@@ -132,18 +132,8 @@ console.log(bar());
 //不允许重复声明
 let n = 10;
 //第一种场景，内层变量可能会覆盖外层变量。
-//用来计数的循环变量泄露为全局变量
-{
-    {
-        {
-            let insane = 'Hello World'
-             {
+//用来计数的循环变量泄露为全局变量}
 
-                console.log(insane);
-            }
-        }
-    }
-};
 //内层作用域可以访问外层作用欲的变量
 //总是将代码包裹成一个 IIFE(Immediately-Invoked Function Expression)，用以创建独立隔绝的定义域。这一举措可防止全局命名空间被污染。
 //ES5规定，函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明。
@@ -165,3 +155,119 @@ console.log(t);
 console.log(y);
 //析够如果等号的右边不是数组（或者严格地说，不是可遍历的结构，参见《Iterator》一章），那么将会报错。
 console.log("😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸")
+
+
+var str = new Object("String")
+console.log(str.length)
+console.log("str".length)
+var str = "m";
+console.log()
+console.log(typeof("dfd"))
+console.log([1, 3] instanceof(Array))
+var b = { x: 2, b: 3 }
+console.log(b.x);
+console.log(Object.getOwnPropertyNames(Date))
+
+function Cat(name, age) {
+    this.name = name;
+    this.age = age;
+
+}
+Cat.prototype.hello = function() {
+    console.log("喵喵");
+}
+
+var xioahua = new Cat("xiaohong", 23);
+console.log(xioahua.hello())
+
+function Animal() {
+    this.type = "熊猫";
+}
+
+function BigAnimal(name, age) {
+    Animal.apply(this, arguments);
+    this.name = name;
+    this.age = age;
+}
+
+function little(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+var big1 = new BigAnimal("sundan", 12);
+console.log(big1.type)
+    //prototype 的原型是一个对象
+var xion = new Animal();
+var littl = new little();
+littl.prototype = xion;
+console.log(littl.type)
+console.log(littl.prototype.constructor);
+
+function add() {
+    console.log("abab");
+
+    function b() {
+        console.log("a->b")
+    }
+}
+
+console.log(add.prototype)
+console.log("fdf");
+
+var a = 23;
+//function也是对象
+var addhead = new Function('a, b', 'return a + b');
+console.log(addhead(3, 3))
+var m = "hello"
+var d = 3;
+var kl = 4;
+switch (d + kl) {
+    case 9:
+        console.log("是9")
+    case 7:
+        console.log("是7");
+
+    case 8:
+        console.log("是8");
+
+    default:
+        console.log("什么也不是")
+}
+
+var foo = 0;
+switch (foo) {
+    case -1:
+        console.log('negative 1');
+        break;
+    case 0: // foo is 0 so criteria met here so this block will run
+        console.log(0);
+        // NOTE: the forgotten break would have been here
+    case 1: // no break statement in 'case 0:' so this case will run as well
+        console.log(1);
+        break; // it encounters this break so will not continue into 'case 2:'
+    case 2:
+        console.log(2);
+        break;
+    default:
+        console.log('default');
+}
+
+var gh = 2 > 3 ? "2>3" : "3>2";
+console.log(gh);
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
+//console.log("3>2")
+
+do {
+    console.log("i am  first");
+} while (2 > 3);
+
+//breake 语句
+
+var hjk = {}
+var jkl = {}
+hjk.prototype=jkl;
+var lkj = {}
+console.log(hjk.prototype)
