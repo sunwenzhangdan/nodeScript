@@ -268,6 +268,81 @@ do {
 
 var hjk = {}
 var jkl = {}
-hjk.prototype=jkl;
+hjk.prototype = jkl;
 var lkj = {}
 console.log(hjk.prototype)
+
+
+console.log("+++++" + Object.__proto__)
+    //eval是直接执行里面的字符串按语句来执行
+eval('console.log("fdf");');
+
+var gg = 23;
+
+function getg() {
+    var gt = 343;
+
+    function getgt() {
+        gt++;
+        return gt;
+    }
+
+    return getgt();
+}
+var v = getg();
+console.log(v)
+console.log(v)
+console.log(v)
+console.log(v)
+console.log(v)
+
+function createIncrementor(start) {
+    return function() {
+        return start++;
+    };
+}
+
+var inc = createIncrementor(5);
+
+console.log(inc()) // 5
+console.log(inc()) // 5
+console.log(inc()) // 5
+
+
+function greeting(name) {
+    var text = 'Hello ' + name; // local variable
+    // 每次调用时，产生闭包，并返回内部函数对象给调用者
+    return function() { console.log(text); }
+}
+var sayHello1 = greeting("Closure");
+sayHello1() // 通过闭包访问到了局部变量text
+var s1 = Symbol('foo');
+var s2 = Symbol('foo');
+console.log(s1 === s2);
+console.log(s1.toString())
+console.log(s2.toString())
+
+
+var a = [];
+for (var i = 0; i < 10; i++) {
+    a[i] = function() {
+        console.log(i);
+    };
+
+}
+console.log(a[i])
+a[6]();
+
+
+var a = {
+    x: 10,
+    calcuate: function(z) {
+        return this.jj + this.y + this.z;
+    }
+}
+
+var b = Object.create(a, { y: { value: 20 } })
+console.log(b)
+
+console.log(typeof(null))
+x => x * x

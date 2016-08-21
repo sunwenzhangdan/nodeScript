@@ -33,10 +33,9 @@ switch  当遇到匹配的后面会一直执行
  break 和  continue break 用于跳出代码循环
 
 
+1  语句和表达式的区别  语句既是一系列逻辑判断，表达式是能够得到值
+2  对于值的判断 typeof判断普通值 而instanceof  用于对象
 
- for  in 
-
- for  
 
 
 
