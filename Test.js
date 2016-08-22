@@ -136,8 +136,107 @@ for (let codePoint of 'foo') {
 
     var regex = new RegExp('xyz');
     console.log("xyz".match(regex));
+console.log("😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸😸");
+
+const mcons={};
+mcons.a=1;
+console.log(mcons);
+const  frmcons=Object.freeze({})
+frmcons.b=2
+console.log(frmcons);
+
+let hel="sunshiwen"
+
+class  Stringmethos{
+
+  isind(sun){
+      console.log( hel.indexOf(sun))
+  }
+    endw(sun){
+      console.log( hel.startsWith(sun))
+  }
+
+}
+
+let newo=new Stringmethos();
+newo.isind("sun");
+newo.endw("wen");
+console.log("😸".repeat(20))
+let  bv="match";
+console.log(`Hello ${bv}`);
+
+function fex(x,y){
+    return  {x,y};
+}
+var c=fex(3,4);
+console.log(c);
 
 
+function sayHello(name='sunshiwen'){
+    console.log("hello"+name)
+}
+sayHello();
+
+function Person(name,age){
+
+    return {
+        name:name,
+        age:age
+    }
+}
 
 
+var tom=new Person("sunshiwen",11);
+console.log(tom.age)
+
+//构造函数生成方式
+function   Person1(name,age){
+    this.name=name;
+    this.age=age;
+}
+
+
+var zhangdan=new Person1("xiaozhang",23);
+console.log(zhangdan.age)
+console.log(zhangdan.constructor)
+console.log(tom.constructor)
+console.log(zhangdan instanceof Person1)
+
+
+var   native={}
+for (var key in native) {
+   console.log("你好"+key);
+}
+console.log("哈哈");
+function ghllo(){
+    console.log("dfd");
+}
+
+console.log(ghllo.prototype);
+var o = {};
+function  abc(){
+    console.log("dfd");
+}
+console.log(abc.constuctor);
+
+console.log(o.constructor === Object); // true
+console.log(o.__proto__);
+(function add(x,y){
+    console.log(x+y);
+})(3,4);
+var gh=454;
+
+var bf={
+    name:"1",
+    age:1
+}
+
+
+function helloyun(bf){
+    bf.age+=1;
+  console.log(bf.age)
+}
+helloyun(bf);
+console.log(bf.age)
+console.log(bf)
 
