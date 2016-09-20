@@ -1,12 +1,22 @@
 {
-    "name": "hello1",
-    "version": "1.0.0",
-    "description": "",
-    "main": "Test.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC"
-
+  "name": "hello1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "co-exec": "^1.1.0"
+  },
+  "dependencies": {
+    "async": "^2.0.1",
+    "babel-preset-stage-3": "^6.11.0",
+    "cheerio": "^0.22.0",
+    "co": "^4.6.0",
+    "es6-promise": "^3.3.1"
+  }
 }

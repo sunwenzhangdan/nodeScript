@@ -1,0 +1,63 @@
+<!<!DOCTYPE>
+<html>
+<head
+    <title>promise</title>
+    <style type="">
+        .ball{
+            width:40px;
+            height:40px;
+            border-radius:20px;
+            }
+
+        .ball1{
+           background:red;
+        }
+
+         .ball2{
+           background:yellow;
+        }
+         .ball3{
+           background:green;
+        }
+    
+    </style>
+</head>
+<body>
+   <div class="ball ball1"  style="margin-left:0"></div>
+    <div class="ball ball2" style="margin-left:0"></div>
+    <div class="ball ball3" style="margin-left:0"></div>
+   <script>
+       var ball1=document.querySelector('.ball1')
+        var ball2=document.querySelector('.ball2')
+         var ball3=document.querySelector('.ball3')
+
+   function anmate(ball,distance,callback){
+       console.log("dfd")
+       setTimeout(function(){
+          var marginLeft=parseInt(ball.style.marginLeft,10)
+          if(marginLeft === distance){
+              callback && callback()
+          }
+          else{
+              if(marginLeft<distance){
+                  marginLeft++
+              }else{
+                  marginLeft--
+              }
+              ball.style.marginLeft=marginLeft+'px'
+              anmate(ball,distance,callback)
+          }
+       },13)
+   }
+
+   anmate(ball1,100,function(){
+         anmate(ball2,200,function(){
+           anmate(ball3,300,function(){
+          })
+          
+        })
+     
+     })
+
+   </script>
+    </body>
